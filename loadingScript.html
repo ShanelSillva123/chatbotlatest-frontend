@@ -1,0 +1,28 @@
+<div id="root"></div>
+<script>
+  function loadChatbot() {
+    const script = document.createElement("script");
+    script.src = "https://chat-front.ikon.global/static/js/main.962dab00.js";
+    script.onload = () => {
+      console.log("Chatbot loaded successfully.");
+    };
+    script.onerror = () => {
+      console.error("Failed to load the chatbot script.");
+    };
+    document.head.appendChild(script);
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://chat-front.ikon.global/static/css/main.6d6f8037.css";
+    document.head.appendChild(link);
+  }
+
+  window.CHATBOT_CONFIG = {
+    apiUrl: "https://pichatbot.microwebstudios.com/assistant",
+    position: "bottom-right",
+    botName: "AI Assistant", 
+    companyName: "Your Company"
+  };
+
+  loadChatbot();
+</script>
